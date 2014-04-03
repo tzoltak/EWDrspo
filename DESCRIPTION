@@ -1,0 +1,14 @@
+Package: EWDrspo
+Title: Downloading the data of schools from RSPO website.
+Version: 0.1
+Authors@R: person("Grzegorz", "Golonka", role = c("aut", "cre"),
+    email = "ggolonka@o2.pl")
+Maintainer: Grzegorz Golonka <ggolonka@o2.pl>
+Description: The package contains functions used to downlowading the data of
+    schools from the website: http://sio.men.gov.pl/index.php/rspo.
+Depends:
+    R (>= 3.0.2),
+    RCurl,
+    XML
+License: LGPL-3
+LazyData: true
