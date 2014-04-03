@@ -85,7 +85,7 @@ rspo_dane<-function(plik)
 dane_placowka<-function(placowka)
 {
   nodeData = getNodeSet(placowka,"./div")
-  name = xmlValue(getNodeSet(nodeData[[1]],"./a")[[1]])
+  name = gsub("\n","",xmlValue(getNodeSet(nodeData[[1]],"./a")[[1]]))   
   
   ret = name
   names(ret)[1] <- "Nazwa"
@@ -179,3 +179,6 @@ kody_wojewodztw <- function()
   aaa[[1]]<-NULL
   return(xmlSApply(aaa,xmlAttrs))
 }
+
+
+
