@@ -1,0 +1,15 @@
+\encoding{utf-8}
+\name{kody_wojewodztw}
+\alias{kody_wojewodztw}
+\title{Kody wojewodztw.}
+\usage{
+kody_wojewodztw()
+}
+\value{
+funkcja zwraca wektor ciągów znakowych
+}
+\description{
+Funkcja zwraca kody województw, używane przez strony RSPO
+w kodzie html.
+}
+
