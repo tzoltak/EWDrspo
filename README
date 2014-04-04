@@ -1,0 +1,4 @@
+Pakiet EWDrspo służy do pobierania danych placówek oswiatowych:
+szkół podstawowych, gimnazjów, techników i liceów ogólnokształcących. 
+Pobieranie danych realizuje wywołanie rspo_dane(ścieżka_do_pliku).
+Plik jest zapisywany w formacie csv.

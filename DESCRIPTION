@@ -11,4 +11,4 @@ Depends:
     RCurl,
     XML
 License: LGPL-3
-LazyData: true
+LazyData: false

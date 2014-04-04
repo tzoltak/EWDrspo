@@ -17,6 +17,6 @@ liceów ogólnokształcących oraz techników. Pobrane dane
 zapisuje do pliku csv.
 }
 \examples{
-rspo_dane("rspo.csv")
+#rspo_dane("rspo.csv")
 }
 
