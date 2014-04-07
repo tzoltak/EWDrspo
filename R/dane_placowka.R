@@ -7,7 +7,6 @@
 #' @return 
 #' Funkcja zwraca wektor ciągów znakowych, którego elementy to poszczególne elementy to informacje o placowce.
 #' Nazwy poszczególnych elementów tego wektora to typy informacji.
-#' @export
 dane_placowka<-function(placowka)
 {
   nodeData = getNodeSet(placowka,"./div")
