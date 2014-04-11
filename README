@@ -1,4 +1,31 @@
 Pakiet EWDrspo służy do pobierania danych placówek oswiatowych:
-szkół podstawowych, gimnazjów, techników i liceów ogólnokształcących. 
-Pobieranie danych realizuje wywołanie rspo_dane(ścieżka_do_pliku).
-Plik jest zapisywany w formacie csv.
+szkół podstawowych, gimnazjów, techników i liceów ogólnokształcących oraz zespołów, do których należą. Ze względu na czas pobierania danych zdecydowano się podzielić pobieranie danych ze względu na województwa. Przykładowy kod realizujący pobieranie danych dla wszystkich województw w wersji równoległej:
+
+require(snow)
+
+toPar <- function(kod_woj){
+  require(EWDrspo)
+  nazwa = "Wynik//Test//rspo"
+  plik = paste(nazwa,"_",kod_woj,".csv",sep="")
+  dane_wojewodztwa(plik,kod_woj)
+}
+
+kody = kody_wojewodztw()
+cl <- makeCluster(8, type = "SOCK")
+  parSapply(cl,kody,toPar)
+stopCluster(cl)
+
+Powyższy kod generuje po jednym pliku dla każdego województwa.
+Plik dla całego kraju otrzymamy wywołując:
+
+kody = kody_wojewodztw()
+folder = "Wynik//Test//"
+nazwaPliku = "rspo"
+pliki = paste(folder,nazwaPliku,"_",kody,".csv",sep="")
+
+polacz_pliki(pliki,"Wynik//rspoPGLoTZ.csv")
+
+
+
+
+

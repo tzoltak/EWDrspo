@@ -9,6 +9,7 @@ Description: The package contains functions used to downlowading the data of
 Depends:
     R (>= 3.0.2),
     RCurl,
-    XML
+    XML,
+    bitops
 License: LGPL-3
 LazyData: true

@@ -14,15 +14,13 @@ szkoly_woj_strona(kodWoj, numerStrony)
 }
 \value{
 funkcja zwraca listę węzłów html z informacjami o
-placówkach sch =
-szkoly_woj_strona(kody_wojewodztw()[2],213) xmlSApply(sch,
-nodeValues)
+placówkach
 }
 \description{
 Funkcja zwraca informacje o placówkach, które znajdują
 się na jednej stronie z wynikami wyszukiwania dla
 określonego wojewodztwa. Przez placówkę rozumie się:
 szkołę podstawową, gimnazjum, technikum i leceum
-ogólnokształcące
+ogólnokształcące.
 }
 
