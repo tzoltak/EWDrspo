@@ -2,8 +2,8 @@
 #' @title Adres korespondecyjny 
 #' @description 
 #' Funkcja parsuje węzeł html placówki, żeby 
-#' @param  s sfsdf
-#' @return  sf
+#' @param  placowka ?
+#' @return  ?
 #' @export
 adres_do_korespondencji <- function(placowka)
 {

@@ -6,10 +6,10 @@
 adres_do_korespondencji(placowka)
 }
 \arguments{
-  \item{s}{sfsdf}
+  \item{placowka}{?}
 }
 \value{
-sf
+?
 }
 \description{
 Funkcja parsuje węzeł html placówki, żeby
