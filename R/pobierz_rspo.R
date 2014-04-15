@@ -22,8 +22,13 @@ pobierz_rspo = function(rownolegle=TRUE) {
   # odpalamy ściąganie
   kody = kody_wojewodztw()
   if (rownolegle) {  # równolegle
-    cl <- makeCluster(8, type="SOCK")
-    wojewodztwa = parLapply(cl, as.list(kody), function(kod_woj) return(dane_wojewodztwa(NULL, kod_woj)))
+    cl = makeCluster(8, type="SOCK")
+    wojewodztwa = parLapply(cl, as.list(kody),
+                            function(kod_woj) {
+                              require(EWDrspo)
+                              return(dane_wojewodztwa(NULL, kod_woj))
+                            }
+    )
     stopCluster(cl)
   } else {  # lub sekwencyjnie
     wojewodztwa = lapply(as.list(kody), function(kod_woj) return(dane_wojewodztwa(NULL, kod_woj)))
