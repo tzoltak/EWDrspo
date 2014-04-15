@@ -1,6 +1,6 @@
 \name{sprawdz_baze}
 \alias{sprawdz_baze}
-\title{Sprawdź spójność pobranej bazy.}
+\title{Sprawdz spojnosc pobranej bazy.}
 \usage{
 sprawdz_baze(baza)
 }

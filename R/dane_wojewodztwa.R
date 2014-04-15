@@ -8,7 +8,7 @@
 #' @return 
 #' Funkcja nic nie zwraca.
 #' @export
-dane_wojewodztwa <- function(plik,kod_wojewodztwa)
+dane_wojewodztwa <- function(plik, kod_wojewodztwa)
 {
   RSPOzespol = NULL
   
@@ -80,5 +80,6 @@ dane_wojewodztwa <- function(plik,kod_wojewodztwa)
   }
   colnames(ret) <- names(retList)
   
-  write.csv2(ret, plik, row.names=F, na='',fileEncoding ="UTF-8" )
+  if (!is.null(plik)) write.csv2(ret, plik, row.names=F, na='', fileEncoding ="UTF-8")
+  return(ret)
 }

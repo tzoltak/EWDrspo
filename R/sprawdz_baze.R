@@ -1,4 +1,4 @@
-#' @title Sprawdź spójność pobranej bazy.
+#' @title Sprawdz spojnosc pobranej bazy.
 #' @description
 #' Funkcja sprawdza spójność pobranej bazy pod kątem:
 #' \itemize{
