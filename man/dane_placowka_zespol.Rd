@@ -3,11 +3,14 @@
 \alias{dane_placowka_zespol}
 \title{Informaje dla placowki}
 \usage{
-dane_placowka_zespol(placowka)
+dane_placowka_zespol(placowka, tylkoNadrzedne = FALSE)
 }
 \arguments{
   \item{placowka}{węzeł html, zawierający wszystkie
   informacje o placówce.}
+
+  \item{tylkoNadrzedne}{parametr logiczny określający,
+  czy pobierać tylko dane jednostek nadrzędnych}
 }
 \value{
 Funkcja zwraca listę. Pierwszy element listy to wektor z

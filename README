@@ -26,6 +26,37 @@ pliki = paste(folder,nazwaPliku,"_",kody,".csv",sep="")
 polacz_pliki(pliki,"Wynik//rspoPGLoTZ.csv")
 
 
+Do przetestowania powyższego wyniku pod kątem obecności wszystkich nadrzędnych RSPO 
+może posłużyć kod:
+
+
+tab = read.csv2("Wynik//rspoPGLoTZ.csv",row.names=NULL,fileEncoding ="UTF-8",na="" )
+
+# Pobranie numerów RSPO placówek
+rspo = as.character(tab[,colnames(tab)=="Numer.RSPO"])
+
+# zmienna ret zawiera numery RSPO, dla których poszukiwania nadrzędnych jednostek
+# nie zakończyły się powodzeniem.
+ret = NULL
+
+# Zmienna braki zawiera nie znalezione w bazie danych numery RSPO placówek nadrzędnych.
+braki = NULL
+for(ind in 1:length(rspo)){
+  rspoStr = rspo[ind]
+  nad = nadrzedne_rspo(rspoStr)
+
+  if(length(nad)==0){
+    next();
+  }
+  cat(ind," ")
+  
+  for(v in 1:length(nad)){
+    if(!nad[v] %in% rspo){
+      braki = c(braki,nad)
+      ret = c(ret,rspoStr)
+    }
+  }
+}
 
 
 

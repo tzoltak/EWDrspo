@@ -4,6 +4,7 @@
 #' Funkcja pobiera dane dla jednego numeru RSPO. 
 #' @param  rspoStr ciąg znaków zawierający numer RSPO porządanej placówki.
 #' @return  Funkcja zwraca wektor z informacjami o placówce.
+#' @export
 pobierz_dane_jednego_rspo<-function(rspoStr){
   params <- list(param  ="Support_sipSearchResult",rspo = rspoStr)
   side1 = postForm('http://sio.men.gov.pl/dodatki/rspo2portal/index.php', .params = params, 
@@ -25,5 +26,14 @@ pobierz_dane_jednego_rspo<-function(rspoStr){
   parsed = htmlParse(site, encoding="UTF-8")
   nodes = getNodeSet(parsed,"//html/body/div/div/div[contains(@class,'sipRowResultContainer ')]")
   
-  return(szczegolowe_dane_placowka(nodes[[1]]))
+  szcz <- szczegolowe_dane_placowka(nodes[[1]])
+  rspoSzcz <- szcz[colnames(szcz) == "Numer RSPO"]
+  if(rspoStr == rspoSzcz){
+    ret = szcz 
+  }else{
+    ret <- szczegolowe_dane_placowka(placowka)
+    ret <- cbind(ret,Uwagi=zmienne_globalne("Brak detalow"))
+  }
+  
+  return(ret)
 }

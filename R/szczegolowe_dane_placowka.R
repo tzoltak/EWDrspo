@@ -5,6 +5,7 @@
 #' @param placowka węzeł html, zawierający informacje o placówce.
 #' @return 
 #' Funkcja zwraca tablicę ciągów znakowych z informacjami o placówce.
+#' @export
 szczegolowe_dane_placowka<-function(placowka)
 {
   kolumny = zmienne_globalne("kolumny") 

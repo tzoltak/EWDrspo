@@ -6,6 +6,7 @@
 #' @param kodWoj kod województwa (jako wynik funkcji kody_wojewodztw)
 #' @param numerStrony numer strony wyszukiwania, z której informacje chcemy pobrać
 #' @return funkcja zwraca listę węzłów html z informacjami o placówkach
+#' @export
 szkoly_woj_strona<- function(kodWoj,numerStrony)
 {
   pre = "a%3A17%3A%7Bs%3A5%3A%22param%22%3Bs%3A23%3A%22Support_sipSearchResult%22%3Bs%3A5%3A%22regon%22%3Bs%3A0%3A%22%22%3Bs%3A4%3A%22rspo%22%3Bs%3A0%3A%22%22%3Bs%3A9%3A%22dotOrgPro%22%3Bs%3A1%3A%220%22%3Bs%3A7%3A%22gusWoj3%22%3Bs%3A1%3A%220%22%3Bs%3A7%3A%22gusPow3%22%3Bs%3A1%3A%220%22%3Bs%3A10%3A%22nazwOrgPro%22%3Bs%3A1%3A%220%22%3Bs%3A6%3A%22gusWoj%22%3Bs%3A2%3A%22"

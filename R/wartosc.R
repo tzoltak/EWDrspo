@@ -4,6 +4,7 @@
 #' Funkcja przetwarza węzeł z pojedynczą informacją (jak adres, numer telefonu, strona www,..).
 #' @param nInfo węzeł html, zawierający informację o placówce.
 #' @return Funkcja zwraca dwuelementowy wektor ciągów znakowych, które pierwszy element określa rodzaj informacji, a drugi zawiera informację.
+#' @export
 wartosc <- function(nInfo)
 {
   trimAndClean <- function (x){

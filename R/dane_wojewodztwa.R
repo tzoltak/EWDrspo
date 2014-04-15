@@ -30,7 +30,7 @@ dane_wojewodztwa <- function(plik,kod_wojewodztwa)
     
     for(ind in 1:(length(schools)))
     {
-      zespolVals = dane_placowka_zespol(placowka <- schools[[ind]])
+      zespolVals = wszystkie_nadrzedne (placowka = schools[[ind]])
       
       for(k in 1:length(zespolVals)){
         values = zespolVals[[k]]

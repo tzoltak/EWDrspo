@@ -4,6 +4,7 @@
 #' Funkcja parsuje węzeł html placówki, żeby 
 #' @param  s sfsdf
 #' @return  sf
+#' @export
 adres_do_korespondencji <- function(placowka)
 {
   trimSemicolon <- function (x) gsub("^[ \t\r\n:]+|[ \t\r\n:]+$", "", x)

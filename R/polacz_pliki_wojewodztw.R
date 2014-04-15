@@ -50,5 +50,7 @@ polacz_pliki <- function(pliki,nazwaPliku)
   }
   colnames(ret) <- names(retList)
   
+  ret = ret[!duplicated(ret[,3]),]
+  
   write.csv2(ret, nazwaPliku, row.names=F, na='',fileEncoding ="UTF-8" )
 }

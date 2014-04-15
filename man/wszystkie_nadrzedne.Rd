@@ -1,0 +1,23 @@
+\encoding{utf-8}
+\name{wszystkie_nadrzedne}
+\alias{wszystkie_nadrzedne}
+\title{Informaje dla placowki}
+\usage{
+wszystkie_nadrzedne(placowka)
+}
+\arguments{
+  \item{placowka}{węzeł html, zawierający wszystkie
+  informacje o placówce.}
+}
+\value{
+Funkcja zwraca listę. Pierwszy element listy to wektor z
+informacjami na temat placówki. Kolejne elementy listy
+zawierają dane dotyczące zespołów i jednostek
+nadrzędnych.
+}
+\description{
+Wynikiem działania funkcji są najważniejsze dane
+dostępne na stronie RSPO dla podanej w parametrze
+placówki oraz zespołów i jednostek nadrzędnych.
+}
+

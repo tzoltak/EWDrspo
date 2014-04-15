@@ -3,6 +3,7 @@
 #' @description Funkcja zwraca zmienne globalne urzywane w kodzie innych funkcji z pakietu EWDrspo.
 #' @param  nazwa nazwa parametru.
 #' @return zwraca ciąg znaków
+#' @export
 zmienne_globalne <- function(nazwa)
 {
   ret = NULL
@@ -20,6 +21,8 @@ zmienne_globalne <- function(nazwa)
     ret = "Numer RSPO jednostki nadrzędnej"
   } else if (nazwa == "Brak"){
     ret = "Brak jednostki nadrzędnej w bazie RSPO"
+  } else if (nazwa =="Brak detalow"){
+    ret = "Brak szczegółówych danych"
   }
   
   return(iconv( ret, "UTF-8","windows-1250" ))
