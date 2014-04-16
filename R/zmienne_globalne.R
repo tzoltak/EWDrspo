@@ -25,5 +25,5 @@ zmienne_globalne <- function(nazwa)
     ret = "Brak szczegółówych danych"
   }
   
-  return(iconv( ret, "UTF-8","windows-1250" ))
+  return(ret)
 }
