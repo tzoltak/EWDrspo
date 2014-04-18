@@ -9,7 +9,7 @@
 #' Kolejne elementy listy zawierają dane dotyczące zespołów i jednostek nadrzędnych.
 #' @export
 wszystkie_nadrzedne <- function(placowka){
-  ret = dane_placowka_zespol(placowka) 
+  ret = dane_placowka_zespol(placowka)
   
   if(length(ret) <= 1){
     return(ret)
@@ -17,7 +17,7 @@ wszystkie_nadrzedne <- function(placowka){
   
   rspoNadrzedneVec = sapply(ret,function(x) x[colnames(x)=="Numer RSPO"])[-1]
   
-  ind=1
+  ind = 1
   while( ind <= length(rspoNadrzedneVec) ){
     print(ind)
     daneNad <- dane_nadrzedne_rspo(rspoStr <- rspoNadrzedneVec[ind])

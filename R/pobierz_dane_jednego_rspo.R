@@ -26,7 +26,7 @@ pobierz_dane_jednego_rspo<-function(rspoStr){
   parsed = htmlParse(site, encoding="UTF-8")
   nodes = getNodeSet(parsed,"//html/body/div/div/div[contains(@class,'sipRowResultContainer ')]")
   
-  szcz <- szczegolowe_dane_placowka(nodes[[1]])
+  szcz <- szczegolowe_dane_placowka(placowka=nodes[[1]])
   rspoSzcz <- szcz[colnames(szcz) == "Numer RSPO"]
   if(rspoStr == rspoSzcz){
     ret = szcz 

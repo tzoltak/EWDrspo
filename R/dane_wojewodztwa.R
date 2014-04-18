@@ -2,11 +2,12 @@
 #' @title Dane województwa
 #' @description
 #' Funkcja pobiera informacje o placówkach na terenie jednego województwa. 
-#' Zebrane dane zapisuje do pliku csv.
-#' @param plik ścieżka do pliku
+#' Zebrane dane zapisuje do pliku csv.  
+#' @param plik ścieżka do pliku, 
 #' @param kod_wojewodztwa ciąg znakowy używany przez strony RSPO do zakodowania województwa.
 #' @return 
-#' Funkcja nic nie zwraca.
+#' Jeżeli parametr pliku jest określony to funkcja nic nie zwraca.
+#' W przypadku, gdy parametr plik jest równy NULL to funkcja zwraca połączoną tablicę.
 #' @export
 dane_wojewodztwa <- function(plik, kod_wojewodztwa)
 {
@@ -22,7 +23,7 @@ dane_wojewodztwa <- function(plik, kod_wojewodztwa)
   {
     schools = szkoly_woj_strona(kod_wojewodztwa,pageNum)
     
-    if(length(schools)==0)
+    if( length(schools)==0)
       break;
     
     print(c(kod_wojewodztwa,pageNum));
@@ -81,5 +82,5 @@ dane_wojewodztwa <- function(plik, kod_wojewodztwa)
   colnames(ret) <- names(retList)
   
   if (!is.null(plik)) write.csv2(ret, plik, row.names=F, na='', fileEncoding ="UTF-8")
-  return(ret)
+  else return(ret)
 }

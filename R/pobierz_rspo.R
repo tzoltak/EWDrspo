@@ -16,7 +16,7 @@ pobierz_rspo = function(rownolegle=TRUE) {
   stopifnot(rownolegle %in% c(TRUE, FALSE))
   # sprawdzanie, czy mamy dostęp do wielowątkowości
   if (rownolegle) {
-    rownolegle = "snow"%in%.packages()
+    rownolegle = "snow"%in%.packages(TRUE)
     if (!rownolegle) warning(strwrap("Pakiet 'snow' jest niedostępny. Dane dotyczące poszczególnych województw będą pobierane sekwencyjnie, a nie równolegle.", prefix=" "), immediate.=TRUE)
   }
   # odpalamy ściąganie
@@ -33,12 +33,9 @@ pobierz_rspo = function(rownolegle=TRUE) {
   } else {  # lub sekwencyjnie
     wojewodztwa = lapply(as.list(kody), function(kod_woj) return(dane_wojewodztwa(NULL, kod_woj)))
   }
-  # składanie razem
-  if (length(wojewodztwa) > 1) rspo = rbind(wojewodztwa[[1]], wojewodztwa[[2]])
-  if (length(wojewodztwa) > 2) {
-    for (i in 3:length(wojewodztwa)) rspo = rbind(rspo, wojewodztwa[[i]])
-  }
+  
+  ret = polacz_tabele(wojewodztwa)
+  rspo = zmien_tabele(tab=ret)
   # zwracanie wyniku
   return(rspo)
 }
-

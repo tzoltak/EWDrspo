@@ -1,0 +1,18 @@
+\encoding{utf-8}
+\name{zmien_tabele}
+\alias{zmien_tabele}
+\title{Zmiana formatowania tabeli z danymi RSPO.}
+\usage{
+zmien_tabele(tab)
+}
+\arguments{
+  \item{tab}{tabela z danymi orginalnie pobranymi z RSPO.}
+}
+\value{
+Funkcja zwraca obiekt typu data.frame.
+}
+\description{
+Funkcja dostosowuje format braków danych oraz nazwy kolumn
+tabeli ze ściągniętymi danymi z RSPO.
+}
+

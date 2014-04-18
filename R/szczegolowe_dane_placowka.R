@@ -16,8 +16,18 @@ szczegolowe_dane_placowka<-function(placowka)
   
   ret = name
   names(ret)[1] <- "Nazwa"
+
+  postfix=""
   for(ind in 2:length(nodeData)){
     wartoscTemp = wartosc(nInfo <- nodeData[[ind]])
+   
+    if(wartoscTemp[1]=="Dane organu prowadzącego"){
+      postfix="_prowadzacy"
+    } else if(wartoscTemp[1]=="Dane organu przekazującego dane do RSPO"){
+      postfix="_przekazujacy"
+    }
+    
+    wartoscTemp[1] = paste(wartoscTemp[1],postfix,sep="")
     
     if(!(wartoscTemp[1] %in% kolumny) | (wartoscTemp[1] %in% names(ret) & wartoscTemp[1] %in% nie_powtarzaj)  ){
       next()

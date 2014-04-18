@@ -6,13 +6,15 @@
 dane_wojewodztwa(plik, kod_wojewodztwa)
 }
 \arguments{
-  \item{plik}{ścieżka do pliku}
+  \item{plik}{ścieżka do pliku,}
 
   \item{kod_wojewodztwa}{ciąg znakowy używany przez
   strony RSPO do zakodowania województwa.}
 }
 \value{
-Funkcja nic nie zwraca.
+Jeżeli parametr pliku jest określony to funkcja nic nie
+zwraca. W przypadku, gdy parametr plik jest równy NULL to
+funkcja zwraca połączoną tablicę.
 }
 \description{
 Funkcja pobiera informacje o placówkach na terenie jednego

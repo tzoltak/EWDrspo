@@ -10,11 +10,29 @@ zmienne_globalne <- function(nazwa)
   if( nazwa=="kolumny" )
   {
     ret =  c("Typ","Numer RSPO","Data wpisania do RSPO","REGON",
-              "NIP","Województwo","Adres","Telefon","Nazwa jednostki nadrzędnej","Numer REGON jednostki nadrzędnej",
-              "Numer RSPO jednostki nadrzędnej","Status publiczno-prawny","Kategoria uczniów","Specyfika szkoły/przedszkola",
-              "Związanie organizacyjne","Typ organu prowadzącego") 
+             "NIP","Województwo","Adres","Telefon","Nazwa jednostki nadrzędnej",
+             "Numer REGON jednostki nadrzędnej",
+             "Numer RSPO jednostki nadrzędnej","Status publiczno-prawny",
+             "Kategoria uczniów","Specyfika szkoły/przedszkola",
+             "Związanie organizacyjne",
+             "Data założenia",
+             "Data rozpoczęcia działalności",
+             "Data włączenie do zespołu jednostki złożonej",
+             "Data wyłączenia z zespołu jednostki złożonej",
+             "Kategoria uczniów",
+             "Niepełnosprawność dominująca",
+             "Obwód",
+             "Czy jest internat",
+             "Typ organu prowadzącego_prowadzacy",
+             "Nazwa organu prowadzącego_prowadzacy",
+             "Województwo_prowadzacy",
+             "Adres_prowadzacy",
+             "Typ_przekazujacy",
+             "Nazwa organu rejestrującego_przekazujacy",
+             "Województwo_przekazujacy",
+             "Adres_przekazujacy")
   }else if(nazwa=="nie_powtarzaj"){
-    ret = c("Adres","Typ","Województwo")      
+    ret = c("Adres","Typ","Województwo")
   }else if(nazwa == "zespol"){
     ret = "Zespół szkół i placówek oświatowych"
   } else if(nazwa == "rspoNad" ){
@@ -27,3 +45,16 @@ zmienne_globalne <- function(nazwa)
   
   return(ret)
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

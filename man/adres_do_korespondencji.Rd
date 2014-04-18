@@ -6,12 +6,13 @@
 adres_do_korespondencji(placowka)
 }
 \arguments{
-  \item{placowka}{?}
+  \item{placowka}{węzeł html placówki}
 }
 \value{
-?
+zwraca wektor danych, który zawiera dane adresowe.
 }
 \description{
-Funkcja parsuje węzeł html placówki, żeby
+Funkcja parsuje węzeł html placówki w celu pobrania
+adresu korespondencji.
 }
 

@@ -10,7 +10,8 @@ Description: The package contains functions used to downlowading the data of
 Depends:
     R (>= 3.0.2),
     RCurl,
-    XML
+    XML,
+    snow
 Require: snow
 License: LGPL-3
 LazyData: true

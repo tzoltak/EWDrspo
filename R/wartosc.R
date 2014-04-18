@@ -8,6 +8,7 @@
 wartosc <- function(nInfo)
 {
   trimAndClean <- function (x){
+    # gsub("^[ \t\r\n:]+|\r|\n|[ \t\r\n:]+$", "", x)
     x = gsub("^[ \t\r\n:]+|[ \t\r\n:]+$", "", x)
     x = gsub("\n","",x)
     x = gsub("\r","",x)

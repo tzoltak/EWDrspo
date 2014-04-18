@@ -67,7 +67,7 @@ dane_placowka_zespol <- function(placowka,tylkoNadrzedne=FALSE){
         retList[[length(retList) + 1]] <- daneRSPO
         names(retList)[length(retList)] <- "Nadrzedna"
       }else{
-        retList[[1]] <- cbind(retList[[1]],zmienne_globalne("Brak"))
+        retList[[1]] <- cbind(retList[[1]], zmienne_globalne("Brak"))
         colnames(retList[[1]])[ncol(retList[[1]]) ] <- "Uwagi"
       }
       

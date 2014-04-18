@@ -1,9 +1,9 @@
 #' @encoding utf-8
 #' @title Adres korespondecyjny 
 #' @description 
-#' Funkcja parsuje węzeł html placówki, żeby 
-#' @param  placowka ?
-#' @return  ?
+#' Funkcja parsuje węzeł html placówki w celu pobrania adresu korespondencji. 
+#' @param  placowka węzeł html placówki
+#' @return  zwraca wektor danych, który zawiera dane adresowe.
 #' @export
 adres_do_korespondencji <- function(placowka)
 {
