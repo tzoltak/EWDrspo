@@ -34,8 +34,8 @@ pobierz_rspo = function(rownolegle=TRUE) {
     wojewodztwa = lapply(as.list(kody), function(kod_woj) return(dane_wojewodztwa(NULL, kod_woj)))
   }
   
-  ret = polacz_tabele(wojewodztwa)
-  rspo = zmien_tabele(tab=ret)
+  rspo = polacz_tabele(wojewodztwa)
+  rspo = zmien_tabele(tab=rspo)
   # zwracanie wyniku
   return(rspo)
 }

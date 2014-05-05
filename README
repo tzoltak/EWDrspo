@@ -1,34 +1,16 @@
-Pakiet EWDrspo służy do pobierania danych placówek oswiatowych:
-szkół podstawowych, gimnazjów, techników i liceów ogólnokształcących oraz zespołów, do których należą. Ze względu na czas pobierania danych zdecydowano się podzielić pobieranie danych ze względu na województwa. Przykładowy kod realizujący pobieranie danych dla wszystkich województw w wersji równoległej:
+Pakiet EWDrspo służy do pobierania danych placówek oswiatowych: szkół podstawowych, gimnazjów, techników i liceów ogólnokształcących oraz zespołów, do których należą.
 
+Przykład użycia:
+
+library(EWDrspo)
 require(snow)
-
-toPar <- function(kod_woj){
-  require(EWDrspo)
-  nazwa = "Wynik//Test//rspo"
-  plik = paste(nazwa,"_",kod_woj,".csv",sep="")
-  dane_wojewodztwa(plik,kod_woj)
-}
-
-kody = kody_wojewodztw()
-cl <- makeCluster(8, type = "SOCK")
-  parSapply(cl,kody,toPar)
-stopCluster(cl)
-
-Powyższy kod generuje po jednym pliku dla każdego województwa.
-Plik dla całego kraju otrzymamy wywołując:
-
-kody = kody_wojewodztw()
-folder = "Wynik//Test//"
-nazwaPliku = "rspo"
-pliki = paste(folder,nazwaPliku,"_",kody,".csv",sep="")
-
-polacz_pliki(pliki,"Wynik//rspoPGLoTZ.csv")
-
-
-Do przetestowania powyższego wyniku pod kątem obecności wszystkich nadrzędnych RSPO 
-może posłużyć kod:
-
-
-tab = read.csv2("Wynik//rspoPGLoTZ.csv", encoding="UTF-8")
-sprawdz_baze(tab)
+# Uwaga, to będzie trwać kilka godzin!
+rspo = pobierz_rspo()
+# Wersja jednowoątkowa - trwa dłużej, mniej obciąża komputer:
+# rspo = pobierz_rspo(rownolegle=FALSE)
+str(rspo)
+# Zobaczmy, czy RSPO jest spójne
+sprawdz_baze(rspo)
+# Zapis do pliku csv.
+setwd(".")  # Ustaw katalog!
+write.csv2(rspo, "RSPO.csv", row.names=FALSE, na="", encoding="UTF-8")
