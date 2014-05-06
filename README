@@ -13,4 +13,4 @@ str(rspo)
 sprawdz_baze(rspo)
 # Zapis do pliku csv.
 setwd(".")  # Ustaw katalog!
-write.csv2(rspo, "RSPO.csv", row.names=FALSE, na="", encoding="UTF-8")
+write.csv2(rspo, "RSPO.csv", row.names=FALSE, na="", fileEncoding="UTF-8")
