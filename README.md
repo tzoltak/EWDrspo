@@ -30,6 +30,7 @@ R CMD INSTALL ZPD
 
 ## Przykład użycia:
 
+```r
 library(EWDrspo)
 require(snow)
 # Uwaga, to będzie trwać kilka godzin!
@@ -42,3 +43,4 @@ sprawdz_baze(rspo)
 # Zapis do pliku csv.
 setwd(".")  # Ustaw katalog!
 write.csv2(rspo, "RSPO.csv", row.names=FALSE, na="", fileEncoding="UTF-8")
+```
