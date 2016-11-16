@@ -25,7 +25,7 @@ devtools::install_github('tzoltak/EWDrspo')
    * W konsoli wywołać:
 ```r
 git clone https://github.com/tzoltak/EWDrspo.git
-R CMD INSTALL ZPD
+R CMD INSTALL EWDrspo
 ```
 
 ## Przykład użycia:
@@ -44,3 +44,8 @@ sprawdz_baze(rspo)
 setwd(".")  # Ustaw katalog!
 write.csv2(rspo, "RSPO.csv", row.names=FALSE, na="", fileEncoding="UTF-8")
 ```
+
+## Sponsorzy
+
+Pakiet został opracowany w ramach projektu systemowego *Rozwój metody edukacyjnej wartości dodanej na potrzeby wzmocnienia ewaluacyjnej funkcji egzaminów zewnętrznych* (UDA-POKL.03.02.00-00-001/13-00) współfinansowanego przez Unię Europejską ze środków Europejskiego Funduszu społecznego, realizowanych przez Instytut Badań Edukacyjnych.
+![KL+IBE+EFS](inst/logo-IBE-EWD.png)

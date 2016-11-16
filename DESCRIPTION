@@ -1,7 +1,7 @@
 Encoding: UTF-8
 Package: EWDrspo
-Title: Downloading the data of schools from RSPO website.
-Version: 0.3
+Title: Downloading the data of schools from RSPO website
+Version: 0.4
 Authors@R: person("Grzegorz", "Golonka", role = c("aut", "cre"),
     email = "ggolonka@o2.pl")
 Maintainer: Grzegorz Golonka <ggolonka@o2.pl>
@@ -15,3 +15,4 @@ Depends:
 Require: snow
 License: MIT + file LICENSE
 LazyData: true
+RoxygenNote: 5.0.1
